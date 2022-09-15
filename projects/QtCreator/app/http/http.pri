@@ -55,6 +55,23 @@ XOS_CONSOLE_MAIN_MAIN \
 # http HEADERS
 #
 http_HEADERS += \
+$${RETE_SRC}/xos/network/sockets/interfaces.hpp \
+$${RETE_SRC}/xos/network/sockets/os/interfaces.hpp \
+\
+$${RETE_SRC}/xos/app/console/network/base/main_opt.hpp \
+$${RETE_SRC}/xos/app/console/network/base/main.hpp \
+$${RETE_SRC}/xos/app/console/network/client/main_opt.hpp \
+$${RETE_SRC}/xos/app/console/network/client/main.hpp \
+$${RETE_SRC}/xos/app/console/network/server/main_opt.hpp \
+$${RETE_SRC}/xos/app/console/network/server/main.hpp \
+\
+$${RETE_SRC}/xos/app/console/network/sockets/base/main_opt.hpp \
+$${RETE_SRC}/xos/app/console/network/sockets/base/main.hpp \
+$${RETE_SRC}/xos/app/console/network/sockets/client/main_opt.hpp \
+$${RETE_SRC}/xos/app/console/network/sockets/client/main.hpp \
+$${RETE_SRC}/xos/app/console/network/sockets/server/main_opt.hpp \
+$${RETE_SRC}/xos/app/console/network/sockets/server/main.hpp \
+\
 $${STARA_SRC}/xos/app/console/protocol/xttp/base/main_opt.hpp \
 $${STARA_SRC}/xos/app/console/protocol/xttp/base/main.hpp \
 $${STARA_SRC}/xos/app/console/protocol/xttp/client/main_opt.hpp \
@@ -71,12 +88,16 @@ $${STARA_SRC}/xos/app/console/protocol/http/server/main.hpp \
 \
 $${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/base/main_opt.hpp \
 $${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/base/main.hpp \
+$${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/client/main_opt.hpp \
+$${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/client/main.hpp \
+$${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/server/main_opt.hpp \
+$${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/server/main.hpp \
 
 # http SOURCES
 #
 http_SOURCES += \
-$${STARA_SRC}/xos/app/console/protocol/http/server/main_opt.cpp \
-$${STARA_SRC}/xos/app/console/protocol/http/server/main.cpp \
+$${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/server/main_opt.cpp \
+$${STARA_SRC}/xos/app/console/network/sockets/protocol/xttp/server/main.cpp \
 
 ########################################################################
 # http FRAMEWORKS
