@@ -41,6 +41,7 @@ public:
     typedef typename string_t::char_t char_t;
     typedef typename extends::reader_t reader_t;
     typedef typename extends::writer_t writer_t;
+    typedef typename reader_t::sized_t sized_t;
 
     /// constructor / destructor
     fieldt(const fieldt& copy): extends(copy) {
@@ -59,8 +60,14 @@ public:
         set_default();
         do {
             if (0 < (amount = reader.read(&c, 1))) {
+                char_t c1 = c;
+                sized_t sized = 0;
+
                 count += amount;
-                if (('&' != c)) {
+                if (0 < (reader.sized_read(sized))) {
+                    c1 = (char_t)sized;
+                }
+                if (('&' != c1)) {
                     chars.append(&c, 1);
                 } else {
                     success = this->is_set(chars);

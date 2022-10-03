@@ -60,7 +60,7 @@ public:
 
             while (count < size) {
                 if (0 < (amount = reader_.read(sized, 1))) {
-                    switch (c = ((char)*sized)) {
+                    switch (c = ((char)(sized_ = (*sized)))) {
                     case '%':
                         if (0 < (amount = read_x(x1, sized))) {
                             if (0 < (amount = read_x(x2, sized))) {
@@ -92,6 +92,11 @@ public:
     }    
     virtual ssize_t fill() {
         return reader_.fill();
+    }    
+    virtual ssize_t sized_read(sized_t& sized) {
+        ssize_t count = sizeof(sized_);
+        sized = sized_;
+        return count;
     }    
 
 protected:
@@ -130,6 +135,7 @@ protected:
 
 protected:
     reader_t& reader_;
+    sized_t sized_;
 }; /// class readert
 typedef readert<> reader;
 
